@@ -43,8 +43,8 @@ public EmployeJpaRepository employeJpaRepository;
 			if(existingEmploye!=null) {
 				existingEmploye.setCompany(employe.getCompany());
 			}
-			employeJpaRepository.save(employe);
-			return employe;
+			employeJpaRepository.save(existingEmploye);
+			return existingEmploye;
 	   }
           catch(Exception e) {
         	  throw new ResponseStatusException(HttpStatus.NOT_FOUND);
